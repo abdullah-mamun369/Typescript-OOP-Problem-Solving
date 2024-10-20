@@ -184,22 +184,11 @@ import { log } from "console"
         licenseNumber: "ABC123"
     }
 
-    console.log(combineCarAndDriver(car, driver));
+    // console.log(combineCarAndDriver(car, driver));
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -212,13 +201,31 @@ import { log } from "console"
 
 
 
+    const sumOfNumbers = (data: unknown): number | undefined => {
+
+        if (Array.isArray(data)) {
+            let sum = 0;
+            for (const value of data) {
+                if (typeof value !== "number") {
+                    console.error("Input must be an array of numbers.")
+                    return
+                }
+                else if (typeof value === "number") {
+                    sum += value;
+                }
+            }
+            return sum;
+        }
+        else {
+            console.error("Input is not an array.");
+        }
+    }
 
 
+    const numArray = [1, 2, "3", 4, 5]
 
 
-
-
-
+    console.log(sumOfNumbers(numArray));
 
 
 
