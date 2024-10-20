@@ -95,7 +95,7 @@ import { log } from "console"
     const cat = new Cat("cat", "mew")
     const dog = new Dog("dog", "bark")
 
-    isCat(dog)
+    // isCat(dog)
 
 
 }
@@ -112,9 +112,36 @@ import { log } from "console"
     // Every time you find a number in the list, you'll add it to a total. You'll start at zero and then keep adding the numbers you find. If no number is found in the list return 0. To make sure TypeScript knows these things are numbers, you'll use type assertions.
 
 
+    type MixedData = (number | string)[]
 
 
+    const totalSum = (mixedData: MixedData): number => {
+        let sum = 0;
+        for (let i = 0; i < mixedData.length; i++) {
+            if (typeof mixedData[i] === 'number') {
+                sum = sum + Number(mixedData[i]);  // type assertion 
+            }
+        }
+        return sum;
+    }
 
+
+    //another way-----------------------
+
+    const totalSum2 = (mixedData: MixedData): number => {
+        let sum = 0;
+        for (const data of mixedData) {
+            if (typeof data === 'number') {
+                sum = sum + Number(data);  // type assertion 
+            }
+        }
+        return sum;
+    }
+
+    const mixedData: MixedData = [8, "Mamun", 3, 4, "Noman", 10]
+
+    // console.log(totalSum(mixedData));
+    // console.log(totalSum2(mixedData));
 
 
 
