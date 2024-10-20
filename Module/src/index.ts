@@ -144,17 +144,6 @@ import { log } from "console"
     // console.log(totalSum2(mixedData));
 
 
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -168,21 +157,49 @@ import { log } from "console"
 
 
 
+    interface Car {
+        make: string;
+        model: string;
+        year: number;
+    }
+
+    interface Driver {
+        name: string;
+        licenseNumber: string;
+    }
 
 
+    const combineCarAndDriver = (car: Car, driver: Driver): { make: string, model: string, year: number, name: string, licenseNumber: string } => {
+        return { ...car, ...driver }
+    };
 
+    const car: Car = {
+        make: "Toyota",
+        model: "Camry",
+        year: 2021
+    }
 
+    const driver: Driver = {
+        name: "Mamun",
+        licenseNumber: "ABC123"
+    }
 
-
-
-
-
-
-
-
-
-
+    console.log(combineCarAndDriver(car, driver));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
