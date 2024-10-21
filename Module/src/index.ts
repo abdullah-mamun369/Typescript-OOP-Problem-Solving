@@ -225,13 +225,7 @@ import { log } from "console"
     const numArray = [1, 2, "3", 4, 5]
 
 
-    console.log(sumOfNumbers(numArray));
-
-
-
-
-
-
+    // console.log(sumOfNumbers(numArray));
 
 
 }
@@ -264,27 +258,36 @@ import { log } from "console"
     // console.log(indexInStrings); //output: 2
 
 
+    const findFirstOccurrence = (targetedArray: number[] | string[], targetedElement: number | string): number => {
+
+        // if (typeof targetedArray[0]==="number"&& typeof targetedElement==="number") {
+
+        // }
+
+        for (let i = 0; i < targetedArray.length; i++) {
+            if (targetedArray[i] == targetedElement) {
+                return i;
+            }
+        }
+        return -1
+    }
 
 
 
+    const numbers: number[] = [1, 2, 3, 4, 5, 7];
+
+    const strings: string[] = ["apple", "banana", "cherry", "date"];
+
+    const targetNumber = 7;
+
+    const targetString = "date";
+
+
+    const indexNumber = findFirstOccurrence(strings, targetString)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // console.log(indexNumber);
 
 
 }
